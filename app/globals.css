@@ -2,12 +2,12 @@
 
 @layer base {
   html {
-    background-color: #07070f;
-    color: #e2e2f0;
+    background-color: #040409;
+    color: #ddddf0;
   }
 
   body {
-    @apply bg-[#07070f] text-[#e2e2f0] font-sans antialiased;
+    @apply bg-[#040409] text-[#ddddf0] font-sans antialiased;
     margin: 0;
     padding: 0;
   }
@@ -28,30 +28,36 @@ html {
   scroll-behavior: smooth;
 }
 
-/* MUI SvgIcon size normalisation — controls via font-size on parent */
-.MuiSvgIcon-root {
-  font-size: inherit;
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.125em;
-  display: inline-block;
-  fill: currentColor;
-  flex-shrink: 0;
+@keyframes cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
-::-webkit-scrollbar {
-  width: 6px;
+.blink-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: currentColor;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: cursor-blink 1.1s step-end infinite;
 }
-::-webkit-scrollbar-track {
-  background: #07070f;
+
+@keyframes signal-draw {
+  from { stroke-dashoffset: 1800; }
+  to   { stroke-dashoffset: 0;    }
 }
-::-webkit-scrollbar-thumb {
-  background: #1c1c2e;
-  border-radius: 3px;
+
+.signal-trace {
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: signal-draw 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #2a2a40;
-}
+
+::-webkit-scrollbar            { width: 6px; }
+::-webkit-scrollbar-track      { background: #040409; }
+::-webkit-scrollbar-thumb      { background: #12121e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: #1c1c2c; }
 
 @media (max-width: 767px) {
   body.menu-open {

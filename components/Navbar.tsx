@@ -1,26 +1,7 @@
-/*
- * Geovane2dd Portfolio — Developer documentation site
- * Copyright (C) 2026 Geovane2dd
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import MenuRounded  from "@mui/icons-material/MenuRounded";
-import CloseRounded from "@mui/icons-material/CloseRounded";
-import GitHubIcon   from "@mui/icons-material/GitHub";
+import { Menu, X, Github } from "lucide-react";
 
 export default function Navbar() {
   const [open,     setOpen]     = useState(false);
@@ -68,18 +49,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Nav bar ─────────────────────────────────────────── */}
       <nav
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500
           ${scrolled
-            ? "bg-[#080812]/92 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_0_0_rgba(255,255,255,0.03)]"
+            ? "bg-[#040409]/92 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_0_0_rgba(255,255,255,0.03)]"
             : "bg-transparent"}`}
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
 
-            {/* Logo */}
             <Link
               href="/"
               className="group flex items-center gap-2.5"
@@ -97,7 +76,6 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1">
               {["Projects", "About"].map(label => (
                 <a
@@ -110,6 +88,19 @@ export default function Navbar() {
                   {label}
                 </a>
               ))}
+
+              <a
+                href="https://asmttp.geovanedd.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 text-sm font-mono font-medium
+                  text-amber-400/55 hover:text-amber-300
+                  rounded-lg hover:bg-amber-500/[0.07]
+                  transition-all duration-200"
+                aria-label="Try asmttp live server"
+              >
+                asmttp
+              </a>
 
               <div className="w-px h-4 bg-white/10 mx-2" aria-hidden="true" />
 
@@ -125,31 +116,29 @@ export default function Navbar() {
                 style={{ minHeight: "40px" }}
                 aria-label="Visit GitHub profile"
               >
-                <span className="text-[1em]"><GitHubIcon /></span>
+                <Github size={15} />
                 <span className="hidden lg:inline">GitHub</span>
                 <span className="lg:hidden">Git</span>
               </a>
             </div>
 
-            {/* Mobile burger */}
             <button
               ref={btnRef}
               onClick={() => setOpen(v => !v)}
               className="md:hidden flex items-center justify-center rounded-lg
                 bg-white/[0.06] hover:bg-white/[0.10]
                 border border-white/[0.08] transition-all duration-200
-                touch-manipulation text-white/60 hover:text-white text-[1.25rem]"
+                touch-manipulation text-white/60 hover:text-white"
               style={{ minWidth: "44px", minHeight: "44px" }}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
-              {open ? <CloseRounded /> : <MenuRounded />}
+              {open ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* ── Mobile backdrop ─────────────────────────────────── */}
       {open && (
         <div
           className="fixed inset-0 z-40 bg-black/55 backdrop-blur-sm md:hidden"
@@ -158,7 +147,6 @@ export default function Navbar() {
         />
       )}
 
-      {/* ── Mobile drawer ───────────────────────────────────── */}
       <div
         ref={menuRef}
         className={`fixed top-16 sm:top-20 inset-x-0 z-50 md:hidden
@@ -186,6 +174,18 @@ export default function Navbar() {
             </a>
           ))}
           <a
+            href="https://asmttp.geovanedd.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-4 py-3.5 text-sm font-medium font-mono
+              text-amber-400/70 hover:text-amber-300 hover:bg-amber-500/[0.06]
+              rounded-xl transition-all duration-200 touch-manipulation"
+            style={{ minHeight: "48px" }}
+            onClick={() => setOpen(false)}
+          >
+            asmttp
+          </a>
+          <a
             href="https://github.com/geovane2dd"
             target="_blank"
             rel="noopener noreferrer nofollow"
@@ -195,7 +195,7 @@ export default function Navbar() {
             style={{ minHeight: "48px" }}
             onClick={() => setOpen(false)}
           >
-            <span className="text-[1.1em]"><GitHubIcon /></span>
+            <Github size={16} />
             GitHub
           </a>
         </div>

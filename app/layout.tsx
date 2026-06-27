@@ -1,20 +1,3 @@
-/*
- * Geovane2dd Portfolio — Developer documentation site
- * Copyright (C) 2026 Geovane2dd
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -43,7 +26,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [{ color: "#07070f" }],
+  themeColor: [{ color: "#040409" }],
   colorScheme: "dark",
 };
 
@@ -105,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         })}} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#07070f] text-[#e2e2f0] min-h-screen antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#040409] text-[#ddddf0] min-h-screen antialiased`}
         suppressHydrationWarning
       >
         {children}

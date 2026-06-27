@@ -1,28 +1,11 @@
-/*
- * Geovane2dd Portfolio — Developer documentation site
- * Copyright (C) 2026 Geovane2dd
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HomeRounded from "@mui/icons-material/HomeRounded";
+import { Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#07070f]">
+    <div className="min-h-screen flex flex-col bg-[#040409]">
       <Navbar />
 
       <main className="flex-grow pt-16">
@@ -52,7 +35,7 @@ export default function NotFound() {
                   bg-white text-black rounded-xl text-sm font-semibold
                   hover:bg-neutral-100 transition-all duration-200 active:scale-[0.975]"
               >
-                <span className="text-[1em]"><HomeRounded /></span>
+                <Home size={15} />
                 Back to home
               </Link>
             </div>

@@ -1,34 +1,16 @@
-/*
- * Geovane2dd Portfolio — Developer documentation site
- * Copyright (C) 2026 Geovane2dd
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
 import Link from "next/link";
-import GitHubIcon          from "@mui/icons-material/GitHub";
-import ArrowForwardRounded from "@mui/icons-material/ArrowForwardRounded";
+import { Github, ArrowRight, ExternalLink } from "lucide-react";
 
 const navLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "About",    href: "#about"    },
+  { label: "Projects",         href: "#projects",                                        external: false },
+  { label: "About",            href: "#about",                                           external: false },
+  { label: "All repositories", href: "https://github.com/geovane2dd?tab=repositories",  external: true  },
 ];
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.055] bg-[#060610]">
 
-      {/* Top edge glow */}
       <div
         className="absolute top-0 inset-x-0 h-px
           bg-gradient-to-r from-transparent via-violet-500/25 to-transparent"
@@ -36,9 +18,8 @@ export default function Footer() {
       />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
-          {/* ── Brand ─────────────────────────────────────────── */}
           <div className="space-y-5">
             <Link
               href="/"
@@ -57,7 +38,7 @@ export default function Footer() {
             </Link>
             <p className="text-xs text-white/24 leading-relaxed max-w-xs">
               Developer building open-source tools and self-hosted
-              applications for a more private, efficient web.
+              applications — from assembly to the browser.
             </p>
             <a
               href="https://github.com/geovane2dd"
@@ -71,49 +52,86 @@ export default function Footer() {
               style={{ minHeight: "40px" }}
               aria-label="Visit GitHub profile"
             >
-              <span className="text-[1em]"><GitHubIcon /></span>
+              <Github size={14} />
               GitHub
-              <span className="text-[0.8em] transition-transform duration-200 group-hover:translate-x-0.5">
-                <ArrowForwardRounded />
-              </span>
+              <ArrowRight size={11} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </div>
 
-          {/* ── Navigation ────────────────────────────────────── */}
           <div className="space-y-4">
             <p className="text-[10px] text-white/20 tracking-[0.25em] uppercase font-mono">
               Navigation
             </p>
             <ul className="space-y-3">
-              {navLinks.map(({ label, href }) => (
+              {navLinks.map(({ label, href, external }) => (
                 <li key={label}>
                   <a
                     href={href}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer nofollow" } : {})}
                     className="text-sm text-white/34 hover:text-white/68
                       transition-colors duration-200"
-                    aria-label={`Go to ${label} section`}
                   >
                     {label}
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="https://github.com/geovane2dd?tab=repositories"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="inline-flex items-center gap-1.5 text-sm text-white/34
-                    hover:text-white/68 transition-colors duration-200"
-                  aria-label="All repositories on GitHub"
-                >
-                  All repositories
-                </a>
-              </li>
             </ul>
           </div>
+
+          <div className="space-y-4">
+            <p className="text-[10px] text-white/20 tracking-[0.25em] uppercase font-mono">
+              Featured
+            </p>
+            <div className="rounded-xl border border-amber-500/16 bg-[#0b0a08] p-4 space-y-3
+              hover:border-amber-500/30 transition-all duration-300">
+              <div className="flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-lg
+                  bg-amber-500/10 border border-amber-500/20 shrink-0
+                  font-mono text-[8px] font-bold text-amber-400 select-none">
+                  ASM
+                </span>
+                <span className="text-sm font-semibold text-white/65 font-mono">asmttp</span>
+              </div>
+              <p className="text-[11px] text-white/28 leading-relaxed">
+                Static file server in 100% x86-64 assembly. No libc, raw Linux syscalls.
+              </p>
+              <div className="flex gap-2">
+                <a
+                  href="https://asmttp.geovanedd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5
+                    px-3 py-1.5 rounded-lg
+                    bg-amber-500/12 hover:bg-amber-500/20
+                    border border-amber-500/20 hover:border-amber-500/35
+                    text-[11px] text-amber-400/80 hover:text-amber-300 font-medium
+                    transition-all duration-200"
+                  aria-label="Try asmttp live server"
+                >
+                  <ExternalLink size={10} />
+                  Live
+                </a>
+                <a
+                  href="https://github.com/Geovane2dd/asmttp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5
+                    px-3 py-1.5 rounded-lg
+                    bg-white/[0.04] hover:bg-white/[0.08]
+                    border border-white/[0.07] hover:border-white/[0.15]
+                    text-[11px] text-white/38 hover:text-white/65 font-medium
+                    transition-all duration-200"
+                  aria-label="asmttp source code"
+                >
+                  <Github size={10} />
+                  Source
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* ── Bottom bar ──────────────────────────────────── */}
         <div className="pt-8 border-t border-white/[0.045]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-[10px] text-white/18 font-mono">
