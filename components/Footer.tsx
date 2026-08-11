@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, ArrowRight, ExternalLink } from "lucide-react";
+import { Github, ArrowRight } from "lucide-react";
 
 const navLinks = [
   { label: "Projects",         href: "#projects",                                        external: false },
@@ -26,11 +26,6 @@ export default function Footer() {
               className="inline-flex items-center gap-2.5 group"
               aria-label="Geovane2dd — home"
             >
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg
-                bg-gradient-to-br from-violet-500 to-fuchsia-600 text-white text-xs font-bold
-                shadow-lg shadow-violet-500/20 select-none">
-                G
-              </span>
               <span className="text-sm font-semibold text-white/72
                 group-hover:text-white transition-colors duration-200">
                 Geovane2dd
@@ -82,46 +77,31 @@ export default function Footer() {
             <p className="text-[10px] text-white/20 tracking-[0.25em] uppercase font-mono">
               Featured
             </p>
-            <div className="rounded-xl border border-amber-500/16 bg-[#0b0a08] p-4 space-y-3
-              hover:border-amber-500/30 transition-all duration-300">
+            <div className="rounded-xl border border-orange-500/16 bg-[#0b0908] p-4 space-y-3
+              hover:border-orange-500/30 transition-all duration-300">
               <div className="flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-lg
-                  bg-amber-500/10 border border-amber-500/20 shrink-0
-                  font-mono text-[8px] font-bold text-amber-400 select-none">
-                  ASM
+                  bg-orange-500/10 border border-orange-500/20 shrink-0
+                  font-mono text-[8px] font-bold text-orange-400 select-none">
+                  HID
                 </span>
-                <span className="text-sm font-semibold text-white/65 font-mono">asmttp</span>
+                <span className="text-sm font-semibold text-white/65 font-mono">Ajazzy</span>
               </div>
               <p className="text-[11px] text-white/28 leading-relaxed">
-                Static file server in 100% x86-64 assembly. No libc, raw Linux syscalls.
+                Reverse-engineered Linux driver for Ajazz mice — DPI, RGB and macros without the official software.
               </p>
               <div className="flex gap-2">
                 <a
-                  href="https://asmttp.geovanedd.com"
+                  href="https://github.com/Geovane2dd/Ajazzy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5
                     px-3 py-1.5 rounded-lg
-                    bg-amber-500/12 hover:bg-amber-500/20
-                    border border-amber-500/20 hover:border-amber-500/35
-                    text-[11px] text-amber-400/80 hover:text-amber-300 font-medium
+                    bg-orange-500/12 hover:bg-orange-500/20
+                    border border-orange-500/20 hover:border-orange-500/35
+                    text-[11px] text-orange-400/80 hover:text-orange-300 font-medium
                     transition-all duration-200"
-                  aria-label="Try asmttp live server"
-                >
-                  <ExternalLink size={10} />
-                  Live
-                </a>
-                <a
-                  href="https://github.com/Geovane2dd/asmttp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5
-                    px-3 py-1.5 rounded-lg
-                    bg-white/[0.04] hover:bg-white/[0.08]
-                    border border-white/[0.07] hover:border-white/[0.15]
-                    text-[11px] text-white/38 hover:text-white/65 font-medium
-                    transition-all duration-200"
-                  aria-label="asmttp source code"
+                  aria-label="Ajazzy source code"
                 >
                   <Github size={10} />
                   Source

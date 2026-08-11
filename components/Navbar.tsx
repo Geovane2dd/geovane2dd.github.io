@@ -65,11 +65,6 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               aria-label="Geovane2dd — home"
             >
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg
-                bg-gradient-to-br from-violet-500 to-fuchsia-600 text-white text-xs font-bold
-                shadow-lg shadow-violet-500/25 select-none">
-                G
-              </span>
               <span className="text-sm font-semibold text-white/82
                 group-hover:text-white transition-colors duration-200 tracking-wide">
                 Geovane2dd
@@ -90,16 +85,16 @@ export default function Navbar() {
               ))}
 
               <a
-                href="https://asmttp.geovanedd.com"
+                href="https://github.com/Geovane2dd/Ajazzy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 text-sm font-mono font-medium
-                  text-amber-400/55 hover:text-amber-300
-                  rounded-lg hover:bg-amber-500/[0.07]
+                  text-orange-400/55 hover:text-orange-300
+                  rounded-lg hover:bg-orange-500/[0.07]
                   transition-all duration-200"
-                aria-label="Try asmttp live server"
+                aria-label="Ajazzy on GitHub"
               >
-                asmttp
+                Ajazzy
               </a>
 
               <div className="w-px h-4 bg-white/10 mx-2" aria-hidden="true" />
@@ -174,16 +169,16 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://asmttp.geovanedd.com"
+            href="https://github.com/Geovane2dd/Ajazzy"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-4 py-3.5 text-sm font-medium font-mono
-              text-amber-400/70 hover:text-amber-300 hover:bg-amber-500/[0.06]
+              text-orange-400/70 hover:text-orange-300 hover:bg-orange-500/[0.06]
               rounded-xl transition-all duration-200 touch-manipulation"
             style={{ minHeight: "48px" }}
             onClick={() => setOpen(false)}
           >
-            asmttp
+            Ajazzy
           </a>
           <a
             href="https://github.com/geovane2dd"

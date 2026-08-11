@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import {
   ExternalLink, TrendingUp, Music,
-  ArrowRight, Link2, Terminal, Github, Server,
+  ArrowRight, Link2, Terminal, Github, Server, Mouse,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -43,6 +43,20 @@ type Card = {
 };
 
 const PROJECTS: Card[] = [
+  {
+    id:    "asmttp",
+    title: "asmttp",
+    tag:   "Static File Server",
+    desc:  "Written in 100% x86-64 assembly. No libc, no runtime — raw Linux syscalls and zero-copy sendfile.",
+    stack: ["x86-64 ASM", "Linux", "sendfile(2)"],
+    Icon:  Server,
+    link:  "https://asmttp.geovanedd.com",
+    gh:    "https://github.com/Geovane2dd/asmttp",
+    demo:  true,
+    dot:   "bg-lime-400",
+    beam:  "via-lime-500/40",
+    glow:  "hover:shadow-lime-950/50",
+  },
   {
     id:    "linkpure",
     title: "LinkPure",
@@ -120,7 +134,6 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow" itemProp="mainContentOfPage">
 
-        {/* ═══════════════════════════ HERO ═══════════════════════════ */}
         <section
           className="relative min-h-screen flex flex-col justify-center overflow-hidden"
           aria-label="Geovane2dd — Systems and Web Developer"
@@ -316,12 +329,12 @@ export default function HomePage() {
                 className="group relative md:col-span-2
                   bg-[#0a0a15] rounded-2xl overflow-hidden
                   border border-white/[0.065]
-                  hover:border-amber-500/[0.22]
-                  hover:shadow-[0_12px_60px_-12px_rgba(120,53,15,0.5)]
+                  hover:border-orange-500/[0.22]
+                  hover:shadow-[0_12px_60px_-12px_rgba(154,52,18,0.5)]
                   transition-all duration-300"
               >
                 <div className="absolute top-0 inset-x-0 h-px
-                  bg-gradient-to-r from-transparent via-amber-500/45 to-transparent"
+                  bg-gradient-to-r from-transparent via-orange-500/45 to-transparent"
                   aria-hidden="true" />
 
                 <div className="grid md:grid-cols-[1fr_auto] h-full">
@@ -330,26 +343,26 @@ export default function HomePage() {
                     <div className="flex items-start justify-between mb-5">
                       <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center w-9 h-9 rounded-lg
-                          bg-amber-500/[0.1] border border-amber-500/[0.2]
-                          text-amber-400/[0.8] shrink-0">
-                          <Server size={16} />
+                          bg-orange-500/[0.1] border border-orange-500/[0.2]
+                          text-orange-400/[0.8] shrink-0">
+                          <Mouse size={16} />
                         </div>
                         <div>
                           <div className="flex items-center gap-1.5 mb-0.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" aria-hidden="true" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0" aria-hidden="true" />
                             <span className="text-[10px] font-mono tracking-widest uppercase text-white/[0.22]">
-                              Static File Server
+                              Reverse-Engineered Linux Driver
                             </span>
                           </div>
                           <h3 className="text-lg font-bold font-mono text-white/[0.9]">
                             <a
-                              href="https://asmttp.geovanedd.com"
+                              href="https://github.com/Geovane2dd/Ajazzy"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:text-white transition-colors duration-150"
-                              aria-label="asmttp — Static File Server"
+                              aria-label="Ajazzy — Ajazz mouse driver for Linux"
                             >
-                              asmttp
+                              Ajazzy
                             </a>
                           </h3>
                         </div>
@@ -361,50 +374,38 @@ export default function HomePage() {
 
                     <p className="text-sm text-white/[0.34] leading-relaxed mb-5 flex-1
                       group-hover:text-white/[0.5] transition-colors duration-200">
-                      Written in{" "}
-                      <span className="text-amber-300/[0.82]">100% x86-64 assembly</span>.
-                      No libc, no runtime — raw Linux syscalls and zero-copy{" "}
-                      <code className="font-mono text-[0.85em]">sendfile</code>.
+                      Ajazz mice ship Windows-only configuration software. Ajazzy captures
+                      and replays their{" "}
+                      <span className="text-orange-300/[0.82]">USB HID protocol</span>{" "}
+                      to unlock{" "}
+                      <code className="font-mono text-[0.85em]">DPI</code>,{" "}
+                      <code className="font-mono text-[0.85em]">RGB</code> and macro
+                      control natively on Linux.
                     </p>
 
                     <div className="flex flex-wrap gap-1.5 mb-5">
-                      {["x86-64 ASM", "Linux", "sendfile(2)", "no libc"].map(t => (
+                      {["C", "libusb", "Wireshark", "USB HID"].map(t => (
                         <span
                           key={t}
                           className="px-2.5 py-1 rounded-md font-mono tracking-wide text-[10px]
-                            bg-amber-500/[0.06] border border-amber-500/[0.14] text-amber-400/[0.55]"
+                            bg-orange-500/[0.06] border border-orange-500/[0.14] text-orange-400/[0.55]"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
 
-                    <footer className="flex gap-2.5 pt-5 border-t border-white/[0.055]">
+                    <footer className="pt-5 border-t border-white/[0.055]">
                       <a
-                        href="https://asmttp.geovanedd.com"
+                        href="https://github.com/Geovane2dd/Ajazzy"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-1.5
+                        className="inline-flex items-center justify-center gap-1.5
                           py-2.5 px-4 rounded-xl
-                          bg-amber-500 hover:bg-amber-400
+                          bg-orange-500 hover:bg-orange-400
                           text-black text-xs font-semibold
                           active:scale-[0.975] transition-all duration-200"
-                        aria-label="Try asmttp live server"
-                      >
-                        <ExternalLink size={12} />
-                        Try Server
-                      </a>
-                      <a
-                        href="https://github.com/Geovane2dd/asmttp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-1.5
-                          py-2.5 px-4 rounded-xl
-                          bg-white/[0.05] hover:bg-white/[0.09]
-                          border border-white/[0.07] hover:border-white/[0.17]
-                          text-white/[0.48] hover:text-white text-xs font-medium
-                          transition-all duration-200 active:scale-[0.975]"
-                        aria-label="asmttp source code on GitHub"
+                        aria-label="Ajazzy source code on GitHub"
                       >
                         <Github size={13} />
                         Source Code
@@ -420,66 +421,42 @@ export default function HomePage() {
                     <div className="flex items-center justify-between px-4 py-2.5
                       border-b border-white/[0.04] bg-[#08080c] select-none">
                       <div className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500/[0.45]" />
-                        <span className="text-[10px] text-white/[0.16]">server.asm</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500/[0.45]" />
+                        <span className="text-[10px] text-white/[0.16]">hid_capture.pcap</span>
                       </div>
-                      <span className="text-[9.5px] tracking-wider text-amber-500/[0.3]">
-                        NASM · x86-64
+                      <span className="text-[9.5px] tracking-wider text-orange-500/[0.3]">
+                        USB · Wireshark
                       </span>
                     </div>
 
                     <div className="flex-1 p-5 text-[11px] leading-[2.1] select-none overflow-hidden">
                       <div>
-                        <span className="text-violet-400/[0.88]">global</span>
-                        <span className="ml-2 text-white/[0.48]">_start</span>
+                        <span className="text-white/[0.2]">#</span>
+                        <span className="ml-2 text-white/[0.35]">URB_INTERRUPT out, EP 0x02</span>
                       </div>
-                      <div>
-                        <span className="text-violet-400/[0.88]">section</span>
-                        <span className="ml-2 text-sky-300/[0.62]">.text</span>
+                      <div className="ml-1">
+                        <span className="text-sky-300/[0.82]">08</span>
+                        <span className="ml-2 text-emerald-400/[0.82]">04</span>
+                        <span className="ml-2 text-emerald-400/[0.82]">00</span>
+                        <span className="ml-2 text-orange-400">ff</span>
+                        <span className="ml-3 text-[10px] text-white/[0.14]">; set dpi 0x04ff</span>
                       </div>
-                      <div className="mt-1 text-white/[0.48]">_start:</div>
+                      <div className="mt-1.5 ml-1">
+                        <span className="text-sky-300/[0.82]">08</span>
+                        <span className="ml-2 text-violet-400/[0.82]">12</span>
+                        <span className="ml-2 text-white/[0.35]">ff 6a 00</span>
+                        <span className="ml-3 text-[10px] text-white/[0.14]">; rgb ff6a00</span>
+                      </div>
+                      <div className="mt-2 text-white/[0.48]">decode():</div>
                       <div className="ml-5">
-                        <span className="text-amber-400">mov</span>
-                        <span className="ml-2 text-sky-300/[0.82]">rax</span>
-                        <span className="text-white/[0.2]">,</span>
-                        <span className="ml-2 text-emerald-400/[0.82]">41</span>
-                        <span className="ml-3 text-[10px] text-white/[0.14]">; sys_socket</span>
+                        <span className="text-amber-400">match</span>
+                        <span className="ml-2 text-sky-300/[0.82]">report[1]</span>
                       </div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">mov</span>
-                        <span className="ml-2 text-sky-300/[0.82]">rdi</span>
-                        <span className="text-white/[0.2]">,</span>
-                        <span className="ml-2 text-emerald-400/[0.82]">2</span>
-                        <span className="ml-3 text-[10px] text-white/[0.14]">; AF_INET</span>
-                      </div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">xor</span>
-                        <span className="ml-2 text-sky-300/[0.82]">rdx</span>
-                        <span className="text-white/[0.2]">,</span>
-                        <span className="ml-2 text-sky-300/[0.82]">rdx</span>
-                      </div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">syscall</span>
-                        <span className="ml-3 text-[10px] text-white/[0.14]">; → fd</span>
-                      </div>
-                      <div className="mt-0.5 ml-5 text-[10px] text-white/[0.12]">
-                        ; bind · listen · accept ...
-                      </div>
-                      <div className="mt-1 text-white/[0.48]">.loop:</div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">mov</span>
-                        <span className="ml-2 text-sky-300/[0.82]">rax</span>
-                        <span className="text-white/[0.2]">,</span>
-                        <span className="ml-2 text-emerald-400/[0.82]">40</span>
-                        <span className="ml-3 text-[10px] text-white/[0.14]">; sys_sendfile</span>
-                      </div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">syscall</span>
-                        <span className="ml-3 text-[10px] text-white/[0.14]">; zero-copy</span>
-                      </div>
-                      <div className="ml-5">
-                        <span className="text-amber-400">jmp</span>
-                        <span className="ml-2 text-white/[0.45]">.loop</span>
+                      <div className="ml-9 text-white/[0.35]">0x04 =&gt; dpi_stage(report)</div>
+                      <div className="ml-9 text-white/[0.35]">0x12 =&gt; rgb_frame(report)</div>
+                      <div className="ml-9 text-white/[0.35]">0x2a =&gt; poll_rate(report)</div>
+                      <div className="mt-2 ml-1 text-[10px] text-white/[0.12]">
+                        # no vendor driver required
                       </div>
                     </div>
                   </div>
