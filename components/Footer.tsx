@@ -1,143 +1,18 @@
-import Link from "next/link";
-import { Github, ArrowRight } from "lucide-react";
-
-const navLinks = [
-  { label: "Projects",         href: "#projects",                                        external: false },
-  { label: "About",            href: "#about",                                           external: false },
-  { label: "All repositories", href: "https://github.com/geovane2dd?tab=repositories",  external: true  },
-];
-
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.055] bg-[#060610]">
-
-      <div
-        className="absolute top-0 inset-x-0 h-px
-          bg-gradient-to-r from-transparent via-violet-500/25 to-transparent"
-        aria-hidden="true"
-      />
-
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-
-          <div className="space-y-5">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2.5 group"
-              aria-label="Geovane2dd — home"
-            >
-              <span className="text-sm font-semibold text-white/72
-                group-hover:text-white transition-colors duration-200">
-                Geovane2dd
-              </span>
-            </Link>
-            <p className="text-xs text-white/24 leading-relaxed max-w-xs">
-              Developer building open-source tools and self-hosted
-              applications — from assembly to the browser.
-            </p>
-            <a
-              href="https://github.com/geovane2dd"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg
-                bg-white/[0.05] hover:bg-white/[0.09]
-                border border-white/[0.07] hover:border-white/[0.16]
-                text-sm text-white/50 hover:text-white font-medium
-                transition-all duration-200 active:scale-[0.97]"
-              style={{ minHeight: "40px" }}
-              aria-label="Visit GitHub profile"
-            >
-              <Github size={14} />
-              GitHub
-              <ArrowRight size={11} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
-          </div>
-
-          <div className="space-y-4">
-            <p className="text-[10px] text-white/20 tracking-[0.25em] uppercase font-mono">
-              Navigation
-            </p>
-            <ul className="space-y-3">
-              {navLinks.map(({ label, href, external }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    {...(external ? { target: "_blank", rel: "noopener noreferrer nofollow" } : {})}
-                    className="text-sm text-white/34 hover:text-white/68
-                      transition-colors duration-200"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <p className="text-[10px] text-white/20 tracking-[0.25em] uppercase font-mono">
-              Featured
-            </p>
-            <div className="rounded-xl border border-orange-500/16 bg-[#0b0908] p-4 space-y-3
-              hover:border-orange-500/30 transition-all duration-300">
-              <div className="flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-lg
-                  bg-orange-500/10 border border-orange-500/20 shrink-0
-                  font-mono text-[8px] font-bold text-orange-400 select-none">
-                  HID
-                </span>
-                <span className="text-sm font-semibold text-white/65 font-mono">Ajazzy</span>
-              </div>
-              <p className="text-[11px] text-white/28 leading-relaxed">
-                Reverse-engineered Linux driver for Ajazz mice — DPI, RGB and macros without the official software.
-              </p>
-              <div className="flex gap-2">
-                <a
-                  href="https://github.com/Geovane2dd/Ajazzy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5
-                    px-3 py-1.5 rounded-lg
-                    bg-orange-500/12 hover:bg-orange-500/20
-                    border border-orange-500/20 hover:border-orange-500/35
-                    text-[11px] text-orange-400/80 hover:text-orange-300 font-medium
-                    transition-all duration-200"
-                  aria-label="Ajazzy source code"
-                >
-                  <Github size={10} />
-                  Source
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="pt-8 border-t border-white/[0.045]">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[10px] text-white/18 font-mono">
-              © 2026 Geovane2dd · GNU GPL v3 ·{" "}
-              <a
-                href="https://geovanedd.me"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                className="hover:text-white/42 transition-colors duration-200"
-              >
-                geovanedd.me
-              </a>
-            </p>
-            <p className="text-[10px] text-white/14 font-mono text-center sm:text-right">
-              Free software — redistribute under the{" "}
-              <a
-                href="https://www.gnu.org/licenses/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/26 hover:text-white/52 transition-colors duration-200 underline"
-              >
-                GNU GPL v3
-              </a>
-            </p>
-          </div>
-        </div>
+    <footer className="border-t border-line">
+      <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between">
+        <p>&copy; {new Date().getFullYear()} Geovane2dd</p>
+        <p>
+          Source on{" "}
+          <a
+            href="https://github.com/geovane2dd/geovane2dd.github.io"
+            className="underline underline-offset-4 hover:text-ink"
+          >
+            GitHub
+          </a>
+          , licensed under GPL-3.0.
+        </p>
       </div>
     </footer>
   );

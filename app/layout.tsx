@@ -19,15 +19,18 @@ const geistMono = localFont({
 
 const siteUrl  = "https://geovanedd.me";
 const siteName = "Geovane2dd";
-const defaultTitle       = "Geovane2dd — Developer · Open-Source · Privacy-First";
+const defaultTitle       = "Geovane2dd — Open-Source and Systems Developer";
 const defaultDescription = "Geovane2dd is a web developer crafting open-source tools and self-hosted applications with TypeScript, React and Next.js. Projects built for privacy, performance and developer experience.";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [{ color: "#040409" }],
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f6f2" },
+    { media: "(prefers-color-scheme: dark)", color: "#101013" },
+  ],
+  colorScheme: "light dark",
 };
 
 export const metadata: Metadata = {
@@ -47,12 +50,10 @@ export const metadata: Metadata = {
     type: "website", locale: "en_US", url: siteUrl,
     siteName: `${siteName} Portfolio`,
     title: defaultTitle, description: defaultDescription,
-    images: [{ url: `${siteUrl}/og-image.png`, width: 1200, height: 630, alt: `${siteName} — Developer Portfolio` }],
   },
   twitter: {
     card: "summary_large_image", site: "@Geovane2dd", creator: "@Geovane2dd",
     title: defaultTitle, description: defaultDescription,
-    images: [`${siteUrl}/og-image.png`],
   },
   other: {
     "apple-mobile-web-app-capable":          "yes",
@@ -69,26 +70,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir="ltr">
       <head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options"        content="DENY" />
-        <meta httpEquiv="Referrer-Policy"        content="strict-origin-when-cross-origin" />
         <link rel="icon"             href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest"         href="/manifest.json" />
-        <link rel="canonical"        href={siteUrl} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
           "name": "Geovane2dd",
           "url": siteUrl,
           "sameAs": ["https://github.com/geovane2dd"],
-          "jobTitle": "Full-Stack Web Developer",
+          "jobTitle": "Software Developer",
+          "address": { "@type": "PostalAddress", "addressCountry": "BR" },
           "knowsAbout": ["TypeScript", "React", "Next.js", "Node.js", "Open-Source", "Privacy"],
           "description": defaultDescription,
         })}} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#040409] text-[#ddddf0] min-h-screen antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
         suppressHydrationWarning
       >
         {children}

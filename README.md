@@ -1,133 +1,48 @@
-# GeovaneDD Portfolio
+# geovane2dd.github.io
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.0.3-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.1-38B2AC)](https://tailwindcss.com/)
+Personal portfolio of Geovane2dd, a developer working on open-source tools, self-hosted applications and systems programming. Live at [geovanedd.me](https://geovanedd.me).
 
-Um portfólio profissional desenvolvido com Next.js, TypeScript e TailwindCSS, apresentando projetos self-hosted e open-source.
+## Stack
 
-## 🚀 Tecnologias
+- Next.js 16 (App Router, static rendering)
+- React 19
+- TypeScript
+- Tailwind CSS 4
 
-- [Next.js 15.0.3](https://nextjs.org/)
-- [React 19.0](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Font Awesome](https://fontawesome.com/)
+## Getting started
 
-## 🛠️ Instalação
+Requires Node.js 20 or newer.
 
-1. Clone o repositório:
 ```bash
-git clone https://github.com/geovane2dd/Geovanedd.github.io.git
-cd Geovanedd.github.io
-```
-
-2. Instale as dependências:
-```bash
+git clone https://github.com/geovane2dd/geovane2dd.github.io.git
+cd geovane2dd.github.io
 npm install
-# ou
-yarn install
-```
-
-3. Inicie o servidor de desenvolvimento:
-```bash
 npm run dev
-# ou
-yarn dev
 ```
 
-4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+The site is served at http://localhost:3000.
 
-## 📁 Estrutura do Projeto
+## Scripts
+
+| Command         | Description                      |
+| --------------- | -------------------------------- |
+| `npm run dev`   | Start the development server     |
+| `npm run build` | Create a production build        |
+| `npm run start` | Serve the production build       |
+| `npm run lint`  | Run the linter                   |
+
+## Project layout
 
 ```
-Geovanedd.github.io/
-├── app/
-│   ├── layout.tsx       # Layout principal
-│   ├── page.tsx         # Página inicial
-│   ├── not-found.tsx    # Página 404
-│   └── globals.css      # Estilos globais
-├── components/
-│   ├── Navbar.tsx       # Componente de navegação
-│   └── Footer.tsx       # Componente do rodapé
-├── public/
-│   ├── sitemap.xml     # Sitemap para SEO
-│   └── robots.txt      # Configurações para crawlers
-└── package.json
+app/          Routes, layout, metadata, robots and sitemap
+components/   Navbar and Footer
+public/       Static assets, manifest and robots.txt
 ```
 
-## 🌟 Funcionalidades
+## Deployment
 
-- Design responsivo e minimalista
-- Interface profissional e limpa
-- Otimização SEO
-- Navegação intuitiva
-- Modo escuro por padrão
-- Layout moderno e focado em conteúdo
+A GitHub Actions workflow in `.github/workflows/nextjs.yml` builds the site on every push to `main`. A `Dockerfile` is also provided for container-based hosting.
 
-## 🚀 Deploy
+## License
 
-O site está configurado para deploy na Vercel. Para fazer o deploy:
-
-1. Faça push para o repositório principal
-2. A Vercel detectará automaticamente as mudanças
-3. O deploy será feito automaticamente
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-
-## 📧 Contato
-
-GeovaneDD - [Website](https://geovanedd.me) | [GitHub](https://github.com/geovane2dd)
-
-## 🌐 Projetos em Destaque
-
-### B3API
-Uma API dedicada aos dados do mercado financeiro brasileiro (B3).
-- [Demo](https://b3api.geovanedd.me)
-- [GitHub](https://github.com/geovane2dd/B3API)
-- Tags: API, Finance, Data
-
-### LinkPure
-Ferramenta para remover rastreamento de links, focada em sites de compras online. Também remove links de afiliados.
-- [Demo](https://linkpure.geovanedd.me)
-- [GitHub](https://github.com/geovane2dd/LinkPure)
-- Tags: Tool, Privacy, Web
-
-### Site para a Banda Little Dolly
-Um site desenvolvido usando HTML e CSS para apresentar e divulgar a banda.
-- [GitHub](https://github.com/bandalittledolly/Website)
-- Tags: HTML, CSS, Web
-
-### Site do FlexTux
-Um site desenvolvido usando HTML e CSS para apresentar o FlexTux. (Descontinuado)
-- [GitHub](https://github.com/FlexTux/FlexTux-Website)
-- Tags: HTML, CSS, Linux
-
-## 🛠️ Scripts Disponíveis
-
-```bash
-# Desenvolvimento
-npm run dev
-
-# Build
-npm run build
-
-# Produção
-npm run start
-
-# Linting
-npm run lint
-```
-
-## 🔧 Configuração
-
-O projeto utiliza várias tecnologias modernas e está configurado com:
-
-- TypeScript para tipagem estática
-- TailwindCSS para estilização
-- Next.js para renderização e roteamento
-- Font Awesome para ícones
-- SEO otimizado com meta tags e sitemap
+Released under the GNU General Public License v3.0. See [LICENSE](LICENSE).

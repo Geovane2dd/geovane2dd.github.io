@@ -1,12 +1,12 @@
 {
-  "name": "GeovaneDD - Web Developer | Self-Hosted and Open-Source Projects",
+  "name": "Geovane2dd - Systems and Web Developer",
   "short_name": "GeovaneDD",
-  "description": "Professional portfolio of GeovaneDD, a web developer specialized in self-hosted and open-source projects. Explore open-source projects, APIs, and web development tools.",
+  "description": "Portfolio of Geovane2dd: open-source tools, self-hosted applications and systems programming.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#f7f6f2",
+  "theme_color": "#f7f6f2",
   "orientation": "portrait-primary",
   "shortcuts": [
     {
@@ -28,15 +28,7 @@
       "src": "/favicon.ico",
       "sizes": "any",
       "type": "image/x-icon"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any maskable"
     }
   ],
-  "prefer_related_applications": false,
-  "screenshots": [],
-  "iarc_rating_id": ""
+  "prefer_related_applications": false
 }

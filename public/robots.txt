@@ -154,7 +154,6 @@ Disallow: /
 User-agent: ia_archiver
 Disallow: /
 
-# Additional blocked bots (from the newer version only)
 User-agent: Ai2Bot-Dolma
 Disallow: /
 
@@ -221,7 +220,6 @@ Disallow: /
 User-agent: TikTokSpider
 Disallow: /
 
-# Allow good bots
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -242,10 +240,8 @@ User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
 
-# Default rules for others
 User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Site information
 Sitemap: https://geovanedd.me/sitemap.xml
