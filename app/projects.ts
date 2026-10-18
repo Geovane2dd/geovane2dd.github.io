@@ -15,6 +15,7 @@ export const projects: Project[] = [
       "Linux driver for Ajazz mice, whose configuration software only runs on Windows. The USB HID protocol was reverse-engineered from packet captures to control DPI, RGB and macros natively.",
     stack: ["C", "libusb", "USB HID", "Wireshark"],
     repo: "https://github.com/Geovane2dd/Ajazzy",
+    demo: "https://ajazzy.geovanedd.com",
   },
   {
     name: "asmttp",
