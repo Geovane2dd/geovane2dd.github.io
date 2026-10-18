@@ -4,7 +4,7 @@ export const dynamic    = "force-static";
 export const revalidate = 3600;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://geovanedd.me";
+  const baseUrl = "https://geovanedd.com";
 
   return [
     {
